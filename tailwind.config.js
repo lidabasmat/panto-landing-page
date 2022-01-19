@@ -7,11 +7,36 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontFamily: {
-            display: ['Arial', 'Helvetica', 'sans-serif'],
-            body: ['Arial', 'Helvetica', 'sans-serif'],
+            display: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
+            body: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
+        },
+        fontSize: {
+            'xs': ['.75rem'],
+            'sm': ['.875rem'],
+            'tiny': ['.875rem'],
+            'base': ['1rem', '1.85'],
+            'lg': ['1.125rem', '1.85'],
+            'xl': ['1.25rem', '1.3'],
+            '2xl': ['1.5rem', '1.3'],
+            '3xl': ['1.875rem', '1.3'],
+            '4xl': ['2.625rem', '1.3'],
+            '5xl': ['3rem', '1.3'],
+            '6xl': ['4rem', '1.3'],
+            '7xl': ['5rem', '1.3'],
         },
         extend: {
             colors: {
+              gray: {
+                100: '#F7F7F7',
+              },
+              orange: {
+                400: '#E58411',
+                500: '#F6B76F',
+                600: '#F6973F',
+              },
+              blue: {
+                900: '#0D1B39',
+              },
             },
             margin: {
                 '1/12': '8.333333%',
