@@ -3,6 +3,7 @@ import * as React from "react";
 import { GatsbyImage as Image, getImage } from 'gatsby-plugin-image';
 import IconSearchSource from '../images/search.svg';
 import IconLineSource from '../images/icon-line.svg';
+import ProductCard from '../components/ProductCard';
 import Rating from '../components/Rating';
 import IconPlusSource from '../images/icon-plus.svg';
 
@@ -235,108 +236,38 @@ const IndexPage = () => {
         <div className="container-lg">
           <div className="row">
             <div className="col-full md:col-6 lg:col-3 mt-20">
-              <div className="bg-white rounded-3xl shadow-2xl">
-                <div className="bg-gray-100 px-6 pb-8 text-center rounded-t-3xl">
-                  <Image
-                    image={getImage(data.product1Image)}
-                    className="-mt-12"
-                  />
-                </div>
-                <div className="pt-4 pb-7 px-5">
-                  <span>Chair</span>
-                  <h3 className="typo-h4 mt-2">
-                    Sakarias Armchair
-                  </h3>
-                  <Rating className="mt-1" />
-                  <div className="flex justify-between items-center mt-10">
-                    <div className="font-semibold">
-                      <span className="text-base align-super mr-1">$</span>
-                      <span className="text-xl">392</span>
-                    </div>
-                    <button className="w-12 h-12 bg-blue-900 rounded-full flex justify-center items-center">
-                      <img src={IconPlusSource} alt="Plus Icon" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                title="Sakarias Armchair"
+                category="Chair"
+                image={getImage(data.product1Image)}
+                rating={5}
+                price={392}
+              />
             </div>
             <div className="col-full md:col-6 lg:col-3 mt-20">
-              <div className="bg-white rounded-3xl shadow-2xl">
-                <div className="bg-gray-100 px-6 pb-8 text-center rounded-t-3xl">
-                  <Image
-                    image={getImage(data.product2Image)}
-                    className="-mt-12"
-                  />
-                </div>
-                <div className="pt-4 pb-7 px-5">
-                  <span>Chair</span>
-                  <h3 className="typo-h4 mt-2">
-                    Baltsar Chair
-                  </h3>
-                  <Rating className="mt-1" />
-                  <div className="flex justify-between items-center mt-10">
-                    <div className="font-semibold">
-                      <span className="text-base align-super mr-1">$</span>
-                      <span className="text-xl">299</span>
-                    </div>
-                    <button className="w-12 h-12 bg-blue-900 rounded-full flex justify-center items-center">
-                      <img src={IconPlusSource} alt="Plus Icon" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                title="Baltsar Chair Blue"
+                category="Chair"
+                rating={4}
+                image={getImage(data.product2Image)}
+                price={299}
+              />
             </div>
             <div className="col-full md:col-6 lg:col-3 mt-20">
-              <div className="bg-white rounded-3xl shadow-2xl">
-                <div className="bg-gray-100 px-6 pb-8 text-center rounded-t-3xl">
-                  <Image
-                    image={getImage(data.product3Image)}
-                    className="-mt-12"
-                  />
-                </div>
-                <div className="pt-4 pb-7 px-5">
-                  <span>Chair</span>
-                  <h3 className="typo-h4 mt-2">
-                    Baltsar Chair
-                  </h3>
-                  <Rating className="mt-1" />
-                  <div className="flex justify-between items-center mt-10">
-                    <div className="font-semibold">
-                      <span className="text-base align-super mr-1">$</span>
-                      <span className="text-xl">299</span>
-                    </div>
-                    <button className="w-12 h-12 bg-blue-900 rounded-full flex justify-center items-center">
-                      <img src={IconPlusSource} alt="Plus Icon" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                title="Baltsar Chair Gray"
+                category="Chair"
+                image={getImage(data.product3Image)}
+                price={299}
+              />
             </div>
             <div className="col-full md:col-6 lg:col-3 mt-20">
-              <div className="bg-white rounded-3xl shadow-2xl">
-                <div className="bg-gray-100 px-6 pb-8 text-center rounded-t-3xl">
-                  <Image
-                    image={getImage(data.product4Image)}
-                    className="-mt-12"
-                  />
-                </div>
-                <div className="pt-4 pb-7 px-5">
-                  <span>Chair</span>
-                  <h3 className="mt-2 text-xl font-bold">
-                    Baltsar Chair
-                  </h3>
-                  <Rating className="mt-1" />
-                  <div className="flex justify-between items-center mt-10">
-                    <div className="font-semibold">
-                      <span className="text-base align-super mr-1">$</span>
-                      <span className="text-xl">299</span>
-                    </div>
-                    <button className="w-12 h-12 bg-blue-900 rounded-full flex justify-center items-center">
-                      <img src={IconPlusSource} alt="Plus Icon" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                title="Baltsar Chair Brown"
+                category="Chair"
+                image={getImage(data.product3Image)}
+                price={392}
+              />
             </div>
             <div className="flex flex-row mx-auto mt-14 text-orange-400">
               View All
