@@ -5,6 +5,8 @@ import IconPlusSource from '../images/icon-plus.svg';
 import PropTypes from '../utils/PropTypes';
 
 const ProductCard = ({ title, category, image, price, rating }) => {
+  const dollarPrice = price / 100;
+
   return (
     <div className="bg-white rounded-3xl shadow-2xl">
       <div className="bg-gray-100 px-6 pb-8 text-center rounded-t-3xl">
@@ -26,7 +28,7 @@ const ProductCard = ({ title, category, image, price, rating }) => {
             <span className="text-base align-super mr-1">$</span>
             {price && (
               <span className="text-xl">
-                {price}
+                {dollarPrice}
               </span>
             )}
             {!price && (

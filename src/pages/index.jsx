@@ -17,38 +17,6 @@ const IndexPage = () => {
           )
         }
       }
-      product1Image: file(relativePath: {eq: "product1.png"}) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            height: 250
-          )
-        }
-      }
-      product2Image: file(relativePath: {eq: "product2.png"}) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            height: 250
-          )
-        }
-      }
-      product3Image: file(relativePath: {eq: "product3.png"}) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            height: 250
-          )
-        }
-      }
-      product4Image: file(relativePath: {eq: "product4.png"}) {
-        childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            height: 250
-          )
-        }
-      }
       sofaImage: file(relativePath: {eq: "sofa.png"}) {
         childImageSharp {
           gatsbyImageData(
@@ -123,6 +91,22 @@ const IndexPage = () => {
             height: 48
             width: 48
           )
+        }
+      }
+      products: allProduct(filter: {featured: {eq: true}}) {
+        nodes {
+          title
+          price
+          rating
+          type
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: NONE
+                height: 250
+              )
+            }
+          }
         }
       }
     }
@@ -235,44 +219,23 @@ const IndexPage = () => {
         </div>
         <div className="container-lg">
           <div className="row">
-            <div className="col-full md:col-6 lg:col-3 mt-20">
-              <ProductCard
-                title="Sakarias Armchair"
-                category="Chair"
-                image={getImage(data.product1Image)}
-                rating={5}
-                price={392}
-              />
-            </div>
-            <div className="col-full md:col-6 lg:col-3 mt-20">
-              <ProductCard
-                title="Baltsar Chair Blue"
-                category="Chair"
-                rating={4}
-                image={getImage(data.product2Image)}
-                price={299}
-              />
-            </div>
-            <div className="col-full md:col-6 lg:col-3 mt-20">
-              <ProductCard
-                title="Baltsar Chair Gray"
-                category="Chair"
-                image={getImage(data.product3Image)}
-                price={299}
-              />
-            </div>
-            <div className="col-full md:col-6 lg:col-3 mt-20">
-              <ProductCard
-                title="Baltsar Chair Brown"
-                category="Chair"
-                image={getImage(data.product3Image)}
-                price={392}
-              />
-            </div>
-            <div className="flex flex-row mx-auto mt-14 text-orange-400">
+            {data.products.nodes.map((product) => (
+              <div className="col-full md:col-6 lg:col-3 mt-20">
+                <ProductCard
+                  title={product.title}
+                  category={product.type}
+                  image={getImage(product.image)}
+                  rating={product.rating}
+                  price={product.price}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-14 text-center">
+            <a href="#" className="inline-flex flex-row text-orange-400">
               View All
               <img src={IconLineSource} alt="Line Icon" className="ml-4"/>
-            </div>
+            </a>
           </div>
         </div>
       </div>
